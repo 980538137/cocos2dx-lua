@@ -1,0 +1,29 @@
+<UserData Version="2.3.2.0">
+  <Properties>
+    <Item Key="PackageParamsKey">
+      <Value ctype="PackageParams">
+        <LuaIsEncrypt Value="False" />
+        <LuaEncryptKey Value="" />
+        <LuaEncryptSign Value="" />
+        <Android_PackageName Value="org.cocos.Demo1" />
+        <AndroidkeyStore Value="" />
+        <AndroidVersion Value="" />
+        <iOS_Target Value="Demo1-mobile" />
+        <iOS_BundleID Value="iPhone Developer: Chuangming Yu (KLP24ZC9ZQ)" />
+        <Platform Value="None" />
+        <RunPlatform Value="None" />
+        <FrameworkVersion Value="cocos2d-x-3.7.1" />
+        <IsDebugKeystore Value="True" />
+        <EnableSourceMap Value="False" />
+        <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="XCode" />
+        <IsLastPublish Value="True" />
+        <LastRunType Value="Mac" />
+      </Value>
+    </Item>
+  </Properties>
+</UserData>
