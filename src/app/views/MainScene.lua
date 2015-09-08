@@ -2,9 +2,11 @@
 local MainScene = class("MainScene", cc.load("mvc").ViewBase)
 
 --MainScene.RESOURCE_FILENAME = "MainScene.csb"
+require "protobuf.init"
+require "app.proto.PlayerInfo_pb"
 
 function MainScene:onCreate()
---    printf("resource node = %s", tostring(self:getResourceNode()))
+    printf("resource node = %s", tostring(self:getResourceNode()))
 
     local node = cc.CSLoader:createNode("MainScene.csb")
     self:addChild(node)
@@ -26,8 +28,21 @@ function MainScene:onCreate()
     local button = node:getChildByName("EnterButton")
     button:addTouchEventListener(touchEvent)
 
-    SOCKET = require("app.network.socket").new("172.28.14.170",8080)
-    SOCKET:connect()
+--  lua-protobuf test
+
+    local msg = PlayerInfo_pb.PlayerInfo()
+    msg.id = 100
+    msg.name = "helloworld"
+    local pb_data = msg:SerializeToString()
+    printf("create:%d,%s,%s",msg.id,msg.name,pb_data)
+
+    local msg2 = PlayerInfo_pb.PlayerInfo()
+    msg2:ParseFromString(pb_data)
+    printf("parser:%d,%s,%s",msg2.id,msg2.name,pb_data)
+
+
+--    SOCKET = require("app.network.socket").new("172.28.14.170",8080)
+--    SOCKET:connect()
 ----   Schedule
 --    local function tick()
 --        printf("OnTick")

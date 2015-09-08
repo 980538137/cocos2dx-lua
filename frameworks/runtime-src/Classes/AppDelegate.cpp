@@ -112,15 +112,17 @@ bool AppDelegate::applicationDidFinishLaunching()
     LuaStack* stack = engine->getLuaStack();
     stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
     
+    
+    
     //register custom function
     //LuaStack* stack = engine->getLuaStack();
     //register_custom_function(stack->getLuaState());
     
+    //添加以下代码，在xcode中显示日志
     const luaL_reg global_functions[] = {
         { "print", lua_print },
         { nullptr, nullptr }
     };
-    
     luaL_register(L, "_G", global_functions);
     
     

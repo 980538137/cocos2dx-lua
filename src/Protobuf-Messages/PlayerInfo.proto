@@ -1,0 +1,11 @@
+
+option java_package = "com.ourgame.JSupportServer";
+option java_outer_classname = "TexaspokerProtos";
+
+message PlayerInfo{
+	optional int32 id = 1;
+	optional string name = 2;
+}
+
+
+
