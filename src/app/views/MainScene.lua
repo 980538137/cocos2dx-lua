@@ -4,6 +4,7 @@ local MainScene = class("MainScene", cc.load("mvc").ViewBase)
 --MainScene.RESOURCE_FILENAME = "MainScene.csb"
 require "protobuf.init"
 require "app.proto.PlayerInfo_pb"
+require "app.proto.mobileGame_pb"
 
 function MainScene:onCreate()
     printf("resource node = %s", tostring(self:getResourceNode()))
@@ -40,9 +41,23 @@ function MainScene:onCreate()
     msg2:ParseFromString(pb_data)
     printf("parser:%d,%s,%s",msg2.id,msg2.name,pb_data)
 
+    local req = mobileGame_pb.ReqGameAccountLogin()
+    req.account = "sgxsgx"
+    req.accountType = 0
+    req.password = "123456"
+    req.terminal = 2
+    req.deviceNumber = ""
+    req.gameId = 25011
+    req.comeFrom = "thran"
+    req.token = ""
+    req.language = "en"
+    req.source = 1
+    local reqData = req:SerializeToString()
+    printf("Account:%s  password:%s  ReqGameAccountLogin:%s",req.account,req.password,reqData)
 
---    SOCKET = require("app.network.socket").new("172.28.14.170",8080)
---    SOCKET:connect()
+
+    SOCKET = require("app.network.socket").new("172.28.14.170",8080)
+    SOCKET:connect()
 ----   Schedule
 --    local function tick()
 --        printf("OnTick")
