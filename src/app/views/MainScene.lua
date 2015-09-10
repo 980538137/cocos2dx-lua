@@ -14,14 +14,28 @@ function MainScene:onCreate()
 
     local function touchEvent(sender,eventType)
         if eventType == ccui.TouchEventType.began then
-            printf("Touch Down")
-            self:getApp():enterScene("LoginScene")
+            --printf("Touch Down")
+--            self:getApp():enterScene("LoginScene")
+            local req = mobileGame_pb.ReqGameAccountLogin()
+            req.account = "sgxsgx"
+            req.accountType = 0
+            req.password = "123456"
+            req.terminal = 2
+            req.deviceNumber = ""
+            req.gameId = 25011
+            req.comeFrom = "thran"
+            req.token = ""
+            req.language = "en"
+            req.source = 1
+            local reqData = req:SerializeToString()
+            printf("SendData:%s",reqData)
+            SOCKET:send(reqData)
         elseif eventType == ccui.TouchEventType.moved then
-            printf("Touch Move")
+            --printf("Touch Move")
         elseif eventType == ccui.TouchEventType.ended then
-            printf("Touch Up")
+            --printf("Touch Up")
         elseif eventType == ccui.TouchEventType.canceled then
-            printf("Touch Cancelled")
+            --printf("Touch Cancelled")
         end
     end
 
@@ -53,11 +67,26 @@ function MainScene:onCreate()
     req.language = "en"
     req.source = 1
     local reqData = req:SerializeToString()
+    printf("BodySize:%d",#reqData)
     printf("Account:%s  password:%s  ReqGameAccountLogin:%s",req.account,req.password,reqData)
+    --拼包
+    local request_head =
+    {
+        length = 12 + #reqData,
+        messageId = 0x00000265,
+        sequenceId = 0
+    }
+    printf("HeadSize:%d",table.getn(request_head))
 
+    local request_data = {
+        head = request_head,
+        body = reqData
+    }
 
-    SOCKET = require("app.network.socket").new("172.28.14.170",8080)
+    SOCKET = require("app.network.socket").new("172.28.14.87",22446)
     SOCKET:connect()
+
+
 ----   Schedule
 --    local function tick()
 --        printf("OnTick")

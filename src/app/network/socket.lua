@@ -31,6 +31,12 @@ function SOCKET:connect( host, port)
 	self.socket:connect()
 end
 
+function SOCKET:send(data)
+	-- 发送
+	local pack = ByteArray.new(ByteArray.ENDIAN_BIG):writeStringUInt(data):getPack()
+	self.socket:send(pack)
+end
+
 --[[
 	mod 模块
 	act 行为
