@@ -48,6 +48,20 @@
 		521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */; };
 		521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */; };
 		6081F6641BA26F1D00E9283F /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081F6631BA26F1D00E9283F /* libluacocos2d iOS.a */; };
+		6081F6AB1BA2A06D00E9283F /* alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6921BA2A06D00E9283F /* alloc.c */; };
+		6081F6AC1BA2A06D00E9283F /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6941BA2A06D00E9283F /* array.c */; };
+		6081F6AD1BA2A06D00E9283F /* bootstrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6961BA2A06D00E9283F /* bootstrap.c */; };
+		6081F6AE1BA2A06D00E9283F /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6981BA2A06D00E9283F /* context.c */; };
+		6081F6AF1BA2A06D00E9283F /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F69A1BA2A06D00E9283F /* decode.c */; };
+		6081F6B01BA2A06D00E9283F /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F69C1BA2A06D00E9283F /* map.c */; };
+		6081F6B11BA2A06D00E9283F /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F69E1BA2A06D00E9283F /* pattern.c */; };
+		6081F6B21BA2A06D00E9283F /* proto.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A01BA2A06D00E9283F /* proto.c */; };
+		6081F6B31BA2A06D00E9283F /* register.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A21BA2A06D00E9283F /* register.c */; };
+		6081F6B41BA2A06D00E9283F /* rmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A31BA2A06D00E9283F /* rmessage.c */; };
+		6081F6B51BA2A06D00E9283F /* stringpool.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A41BA2A06D00E9283F /* stringpool.c */; };
+		6081F6B61BA2A06D00E9283F /* varint.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A61BA2A06D00E9283F /* varint.c */; };
+		6081F6B71BA2A06D00E9283F /* wmessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A81BA2A06D00E9283F /* wmessage.c */; };
+		6081F6B81BA2A06D00E9283F /* pbc-lua.c in Sources */ = {isa = PBXBuildFile; fileRef = 6081F6A91BA2A06D00E9283F /* pbc-lua.c */; };
 		9FC760431A67791200D1E6E7 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = 9FC760401A67791200D1E6E7 /* lang */; };
 		9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */; };
 		9FF504841A5E87B100AFDA55 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */; };
@@ -124,6 +138,31 @@
 		521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		6081F6631BA26F1D00E9283F /* libluacocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluacocos2d iOS.a"; path = "../../../../../../../../Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/ios/libluacocos2d iOS.a"; sourceTree = "<group>"; };
+		6081F6921BA2A06D00E9283F /* alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = alloc.c; sourceTree = "<group>"; };
+		6081F6931BA2A06D00E9283F /* alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alloc.h; sourceTree = "<group>"; };
+		6081F6941BA2A06D00E9283F /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
+		6081F6951BA2A06D00E9283F /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		6081F6961BA2A06D00E9283F /* bootstrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bootstrap.c; sourceTree = "<group>"; };
+		6081F6971BA2A06D00E9283F /* bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bootstrap.h; sourceTree = "<group>"; };
+		6081F6981BA2A06D00E9283F /* context.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = context.c; sourceTree = "<group>"; };
+		6081F6991BA2A06D00E9283F /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		6081F69A1BA2A06D00E9283F /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		6081F69B1BA2A06D00E9283F /* descriptor.pbc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptor.pbc.h; sourceTree = "<group>"; };
+		6081F69C1BA2A06D00E9283F /* map.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = map.c; sourceTree = "<group>"; };
+		6081F69D1BA2A06D00E9283F /* map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		6081F69E1BA2A06D00E9283F /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pattern.c; sourceTree = "<group>"; };
+		6081F69F1BA2A06D00E9283F /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pattern.h; sourceTree = "<group>"; };
+		6081F6A01BA2A06D00E9283F /* proto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proto.c; sourceTree = "<group>"; };
+		6081F6A11BA2A06D00E9283F /* proto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proto.h; sourceTree = "<group>"; };
+		6081F6A21BA2A06D00E9283F /* register.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = register.c; sourceTree = "<group>"; };
+		6081F6A31BA2A06D00E9283F /* rmessage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rmessage.c; sourceTree = "<group>"; };
+		6081F6A41BA2A06D00E9283F /* stringpool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stringpool.c; sourceTree = "<group>"; };
+		6081F6A51BA2A06D00E9283F /* stringpool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringpool.h; sourceTree = "<group>"; };
+		6081F6A61BA2A06D00E9283F /* varint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = varint.c; sourceTree = "<group>"; };
+		6081F6A71BA2A06D00E9283F /* varint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = varint.h; sourceTree = "<group>"; };
+		6081F6A81BA2A06D00E9283F /* wmessage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wmessage.c; sourceTree = "<group>"; };
+		6081F6A91BA2A06D00E9283F /* pbc-lua.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "pbc-lua.c"; path = "../Classes/pbc-lua.c"; sourceTree = "<group>"; };
+		6081F6AA1BA2A06D00E9283F /* pbc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pbc.h; path = ../Classes/pbc.h; sourceTree = "<group>"; };
 		7F554FD19DDE81BF2732B56A /* libluacocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluacocos2d Mac.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/mac/libluacocos2d Mac.a"; sourceTree = "<absolute>"; };
 		816A4A45827DA7E152AD22F5 /* libsimulator iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsimulator iOS.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/ios/libsimulator iOS.a"; sourceTree = "<absolute>"; };
 		926748A28494AF78DF22A467 /* libsimulator Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsimulator Mac.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/mac/libsimulator Mac.a"; sourceTree = "<absolute>"; };
@@ -271,6 +310,37 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		6081F6911BA2A06D00E9283F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6081F6921BA2A06D00E9283F /* alloc.c */,
+				6081F6931BA2A06D00E9283F /* alloc.h */,
+				6081F6941BA2A06D00E9283F /* array.c */,
+				6081F6951BA2A06D00E9283F /* array.h */,
+				6081F6961BA2A06D00E9283F /* bootstrap.c */,
+				6081F6971BA2A06D00E9283F /* bootstrap.h */,
+				6081F6981BA2A06D00E9283F /* context.c */,
+				6081F6991BA2A06D00E9283F /* context.h */,
+				6081F69A1BA2A06D00E9283F /* decode.c */,
+				6081F69B1BA2A06D00E9283F /* descriptor.pbc.h */,
+				6081F69C1BA2A06D00E9283F /* map.c */,
+				6081F69D1BA2A06D00E9283F /* map.h */,
+				6081F69E1BA2A06D00E9283F /* pattern.c */,
+				6081F69F1BA2A06D00E9283F /* pattern.h */,
+				6081F6A01BA2A06D00E9283F /* proto.c */,
+				6081F6A11BA2A06D00E9283F /* proto.h */,
+				6081F6A21BA2A06D00E9283F /* register.c */,
+				6081F6A31BA2A06D00E9283F /* rmessage.c */,
+				6081F6A41BA2A06D00E9283F /* stringpool.c */,
+				6081F6A51BA2A06D00E9283F /* stringpool.h */,
+				6081F6A61BA2A06D00E9283F /* varint.c */,
+				6081F6A71BA2A06D00E9283F /* varint.h */,
+				6081F6A81BA2A06D00E9283F /* wmessage.c */,
+			);
+			name = src;
+			path = ../Classes/src;
+			sourceTree = "<group>";
+		};
 		6398445C890723EDA53513F6 /* ios-libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +433,9 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6081F6911BA2A06D00E9283F /* src */,
+				6081F6A91BA2A06D00E9283F /* pbc-lua.c */,
+				6081F6AA1BA2A06D00E9283F /* pbc.h */,
 				9FC7603E1A67791200D1E6E7 /* ide-support */,
 				15427CE2198F237300DC375D /* lua_module_register.h */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
@@ -533,10 +606,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6081F6B31BA2A06D00E9283F /* register.c in Sources */,
+				6081F6B21BA2A06D00E9283F /* proto.c in Sources */,
+				6081F6B51BA2A06D00E9283F /* stringpool.c in Sources */,
+				6081F6AE1BA2A06D00E9283F /* context.c in Sources */,
+				6081F6B41BA2A06D00E9283F /* rmessage.c in Sources */,
+				6081F6B01BA2A06D00E9283F /* map.c in Sources */,
+				6081F6AF1BA2A06D00E9283F /* decode.c in Sources */,
+				6081F6B71BA2A06D00E9283F /* wmessage.c in Sources */,
+				6081F6B81BA2A06D00E9283F /* pbc-lua.c in Sources */,
+				6081F6AC1BA2A06D00E9283F /* array.c in Sources */,
+				6081F6B61BA2A06D00E9283F /* varint.c in Sources */,
+				6081F6B11BA2A06D00E9283F /* pattern.c in Sources */,
 				9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */,
 				5023812517EBBCAC00990C9B /* RootViewController.mm in Sources */,
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
+				6081F6AB1BA2A06D00E9283F /* alloc.c in Sources */,
 				9FFE009F1ACCF59E00D6E35A /* lua_debugger.c in Sources */,
+				6081F6AD1BA2A06D00E9283F /* bootstrap.c in Sources */,
 				5023812417EBBCAC00990C9B /* main.m in Sources */,
 				9FFE00A11ACCF59E00D6E35A /* RuntimeLuaImpl.cpp in Sources */,
 				5023811817EBBCAC00990C9B /* AppController.mm in Sources */,

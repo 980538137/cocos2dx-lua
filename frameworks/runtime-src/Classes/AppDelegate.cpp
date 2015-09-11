@@ -3,7 +3,6 @@
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
 #include "lua_module_register.h"
-
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_LINUX)
 #include "ide-support/CodeIDESupport.h"
 #endif
@@ -12,6 +11,7 @@
 #include "runtime/Runtime.h"
 #include "ide-support/RuntimeLuaImpl.h"
 #endif
+//#include "pbc-lua.c"
 
 using namespace CocosDenshion;
 
@@ -106,7 +106,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
     lua_module_register(L);
-    
+//    luaopen_protobuf_c(L);
     register_all_packages();
     
     LuaStack* stack = engine->getLuaStack();
