@@ -5,6 +5,7 @@ local MainScene = class("MainScene", cc.load("mvc").ViewBase)
 require "protobuf.init"
 require "app.proto.PlayerInfo_pb"
 require "app.proto.mobileGame_pb"
+require "app.proto.Texaspoker_pb"
 
 function MainScene:onCreate()
     printf("resource node = %s", tostring(self:getResourceNode()))
@@ -16,19 +17,27 @@ function MainScene:onCreate()
         if eventType == ccui.TouchEventType.began then
             --printf("Touch Down")
 --            self:getApp():enterScene("LoginScene")
-            local req = mobileGame_pb.ReqGameAccountLogin()
-            req.account = "sgxsgx"
-            req.accountType = 0
-            req.password = "123456"
-            req.terminal = 2
-            req.deviceNumber = ""
-            req.gameId = 25011
-            req.comeFrom = "thran"
-            req.token = ""
-            req.language = "en"
-            req.source = 1
+--            local req = mobileGame_pb.ReqGameAccountLogin()
+--            req.account = "sgxsgx"
+--            req.accountType = 0
+--            req.password = "123456"
+--            req.terminal = 2
+--            req.deviceNumber = ""
+--            req.gameId = 25011
+--            req.comeFrom = "thran"
+--            req.token = ""
+--            req.language = "en"
+--            req.source = 1
+            local req = Texaspoker_pb.REQ_LoginJSS()
+            req.rolename = "sgx"
+            req.cert = "0x83352e20"
+            req.userip = "172.28.160.145"
+            req.LoginMode = 3
+            req.comfromid = 3
+            req.isVisitor = 0
+            req.sLangID = "en"
             local reqData = req:SerializeToString()
-            printf("SendData:%s",reqData)
+            printf("SendData:%s Size:%d",reqData,#reqData)
             SOCKET:send(reqData)
         elseif eventType == ccui.TouchEventType.moved then
             --printf("Touch Move")
@@ -55,35 +64,25 @@ function MainScene:onCreate()
     msg2:ParseFromString(pb_data)
     printf("parser:%d,%s,%s",msg2.id,msg2.name,pb_data)
 
-    local req = mobileGame_pb.ReqGameAccountLogin()
-    req.account = "sgxsgx"
-    req.accountType = 0
-    req.password = "123456"
-    req.terminal = 2
-    req.deviceNumber = ""
-    req.gameId = 25011
-    req.comeFrom = "thran"
-    req.token = ""
-    req.language = "en"
-    req.source = 1
-    local reqData = req:SerializeToString()
-    printf("BodySize:%d",#reqData)
-    printf("Account:%s  password:%s  ReqGameAccountLogin:%s",req.account,req.password,reqData)
-    --拼包
-    local request_head =
-    {
-        length = 12 + #reqData,
-        messageId = 0x00000265,
-        sequenceId = 0
-    }
-    printf("HeadSize:%d",table.getn(request_head))
 
-    local request_data = {
-        head = request_head,
-        body = reqData
-    }
 
-    SOCKET = require("app.network.socket").new("172.28.14.87",22446)
+--    local req = mobileGame_pb.ReqGameAccountLogin()
+--    req.account = "sgxsgx"
+--    req.accountType = 0
+--    req.password = "123456"
+--    req.terminal = 2
+--    req.deviceNumber = ""
+--    req.gameId = 25011
+--    req.comeFrom = "thran"
+--    req.token = ""
+--    req.language = "en"
+--    req.source = 1
+--    local reqData = req:SerializeToString()
+--    printf("BodySize:%d",#reqData)
+--    printf("Account:%s  password:%s  ReqGameAccountLogin:%s",req.account,req.password,reqData)
+
+--172.28.14.87",22446
+    SOCKET = require("app.network.socket").new("172.28.41.205",22168)
     SOCKET:connect()
 
 

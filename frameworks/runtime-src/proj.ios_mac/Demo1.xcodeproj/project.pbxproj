@@ -47,7 +47,7 @@
 		5200BECA1A53D9A500AC45E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5200BEC91A53D9A500AC45E4 /* Security.framework */; };
 		521A8E7019F0C3D200D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */; };
 		521A8E7119F0C3D200D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */; };
-		60FF9FED1BA147E80003CA9D /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF9FEC1BA147E80003CA9D /* libluacocos2d iOS.a */; };
+		6081F6641BA26F1D00E9283F /* libluacocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6081F6631BA26F1D00E9283F /* libluacocos2d iOS.a */; };
 		9FC760431A67791200D1E6E7 /* lang in Resources */ = {isa = PBXBuildFile; fileRef = 9FC760401A67791200D1E6E7 /* lang */; };
 		9FC760451A677A4A00D1E6E7 /* SimpleConfigParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */; };
 		9FF504841A5E87B100AFDA55 /* ConsoleWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF504811A5E87B100AFDA55 /* ConsoleWindow.xib */; };
@@ -123,7 +123,7 @@
 		5200BEC91A53D9A500AC45E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		521A8E6E19F0C3D200D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6F19F0C3D200D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
-		60FF9FEC1BA147E80003CA9D /* libluacocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluacocos2d iOS.a"; path = "../../../../../../../../Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/ios/libluacocos2d iOS.a"; sourceTree = "<group>"; };
+		6081F6631BA26F1D00E9283F /* libluacocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluacocos2d iOS.a"; path = "../../../../../../../../Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/ios/libluacocos2d iOS.a"; sourceTree = "<group>"; };
 		7F554FD19DDE81BF2732B56A /* libluacocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluacocos2d Mac.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/mac/libluacocos2d Mac.a"; sourceTree = "<absolute>"; };
 		816A4A45827DA7E152AD22F5 /* libsimulator iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsimulator iOS.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/ios/libsimulator iOS.a"; sourceTree = "<absolute>"; };
 		926748A28494AF78DF22A467 /* libsimulator Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsimulator Mac.a"; path = "/Applications/Cocos/frameworks/cocos2d-x-3.7.1/prebuilt/mac/libsimulator Mac.a"; sourceTree = "<absolute>"; };
@@ -195,7 +195,7 @@
 				EDD7E3331B58AE60009F9DEB /* libiconv.dylib in Frameworks */,
 				5200BECA1A53D9A500AC45E4 /* Security.framework in Frameworks */,
 				3EEEDB61197107C0006A9FF8 /* MediaPlayer.framework in Frameworks */,
-				60FF9FED1BA147E80003CA9D /* libluacocos2d iOS.a in Frameworks */,
+				6081F6641BA26F1D00E9283F /* libluacocos2d iOS.a in Frameworks */,
 				D6B061351803AC000077942B /* CoreMotion.framework in Frameworks */,
 				1AF4C403178663F200122817 /* libz.dylib in Frameworks */,
 				50805AAF17EBBEAA004CFAD3 /* UIKit.framework in Frameworks */,
@@ -274,7 +274,7 @@
 		6398445C890723EDA53513F6 /* ios-libs */ = {
 			isa = PBXGroup;
 			children = (
-				60FF9FEC1BA147E80003CA9D /* libluacocos2d iOS.a */,
+				6081F6631BA26F1D00E9283F /* libluacocos2d iOS.a */,
 				BCD440A1A814799797D4FA8D /* libcocos2d iOS.a */,
 				816A4A45827DA7E152AD22F5 /* libsimulator iOS.a */,
 			);

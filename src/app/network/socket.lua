@@ -32,9 +32,68 @@ function SOCKET:connect( host, port)
 end
 
 function SOCKET:send(data)
-	-- 发送
-	local pack = ByteArray.new(ByteArray.ENDIAN_BIG):writeStringUInt(data):getPack()
+--	-- 拼包
+--	local request_data = {
+--		length = 12 + #data,
+--		messageId = 0x00000265,
+--		sequenceId = 0,
+--		body = data,
+--	}
+--	dump(request_data)
+	local length = 12 + #data
+	local messageId = 0x00000265
+	local sequenceId = 0
+	local ba = ByteArray.new(ByteArray.ENDIAN_BIG)
+	ba:writeUInt(length)
+	ba:writeUInt(messageId)
+	ba:writeUInt(sequenceId)
+	ba:writeStringBytes(data)
+
+	printf("request:%s", ba:toString(10))
+
+	local pack = ba:getPack()
 	self.socket:send(pack)
+--	-- 发送
+--	local pack = ByteArray.new(ByteArray.ENDIAN_BIG):writeStringUInt(request_data):getPack()
+
+--    -- 直接使用 lpack 库生成一个字节流
+--    local __pack = string.pack("<bihP2", 0x59, 11, 1101, "", "中文")
+--
+--    -- 创建一个ByteArray
+--    local __ba = ByteArray.new()
+--
+--    -- ByteArray 允许直接写入 lpack 生成的字节流
+--    __ba:writeBuf(__pack)
+--
+--    -- 不要忘了，lua数组是1基的。而且函数名称比 position 短
+--    __ba:setPos(1)
+--
+--    -- 这个用法和AS3相同了，只是有些函数名称被我改掉了
+--    print("ba.len:", __ba:getLen())
+--    print("ba.readByte:", __ba:readByte())
+--    print("ba.readInt:", __ba:readInt())
+--    print("ba.readShort:", __ba:readShort())
+--    print("ba.readString:", __ba:readStringUShort())
+--    print("ba.available:", __ba:getAvailable())
+--    -- 自带的toString方法可以以10进制、16进制、8进制打印
+--    print("ba.toString(16):", __ba:toString(16))
+--
+--    -- 创建一个新的ByteArray
+--    local __ba2 = ByteArray.new()
+--
+--    -- 和AS3的用法相同，还支持链式调用
+--    __ba2:writeByte(0x59)
+--        :writeInt(11)
+--        :writeShort(1101)
+--    -- 写入空字符串
+--    __ba2:writeStringUShort("")
+--    -- 写入中文（UTF8）字符串
+--    __ba2:writeStringUShort("中文")
+--
+--    -- 十进制输出
+--    print("ba2.toString(10):", __ba2:toString(10))
+
+	--self.socket:send(pack)
 end
 
 --[[
@@ -180,6 +239,7 @@ end
 
 function SOCKET:onData(__event)
 	local response = ByteArray.new():writeBuf(__event.data):setPos(1)
+	printf("response:",__event.data)
 	response:setEndian(ByteArray.ENDIAN_BIG)
 	self:splitData(response)
 end

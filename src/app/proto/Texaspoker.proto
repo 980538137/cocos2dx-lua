@@ -1,0 +1,110 @@
+// See README.txt for information and build instructions.
+
+package com.ourgame.JSupportServer;
+
+option java_package = "com.ourgame.JSupportServer";
+option java_outer_classname = "TexaspokerProtos";
+
+// REQ_XXX¥˙±Ìµƒ «øÕªß∂À∑¢∏¯∑˛ŒÒ∆˜µƒ
+// ACK_XXX¥˙±Ìµƒ «∑˛ŒÒ∆˜∑¢∏¯øÕªß∂Àµƒ
+
+//OGID_MSGBASE_TEXASPOKER_JSSCLIENT = 0x00003F00 + 0x0000000A0;
+//œ˚œ¢∫≈¥”1ø™ º≈≈¡–£¨≤ª∑÷REQªπ «ACK
+
+//==============================================================================
+// µ¬÷›∆ÀøÀ±≥∞¸œµÕ≥Õ®–≈–≠“È∂®“Â
+// JSS∑˛ŒÒ∆˜”ÎøÕªß∂Àº‰Õ®–≈–≠“È
+// @œ˚œ¢±‡¬Î¥”1ø™ º÷¡49
+//==============================================================================
+// øÕªß∂Àµ«¬ΩJSS
+// MsgID£∫OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 1
+message REQ_LoginJSS {
+	required bytes rolename = 1;				//ƒø«∞∑¢ÀÕµƒ «Ω«…´√˚£¨»œ÷§Ω”ø⁄ÕÍ≥…∫Û…æ≥˝¥ÀœÓ
+	required bytes cert = 2;					//Ω«…´∑˛ŒÒ∆˜∑µªÿµƒ÷§ È£¨Õ®π˝¥À÷§ ÈΩ‚¬ÎΩ«…´√˚
+	required string userip = 3;					//ip
+	required int32 LoginMode = 4;				//µ«¬ºƒ£ Ω
+	optional int32 comfromid = 5;			//¿¥‘¥id
+	optional int32 isVisitor = 6;			// «∑Ò «”ŒøÕ
+	
+	optional bytes szSpeIP	= 7;	
+ 	optional string sLangID  = 8[default="zh_cn"];    //øÕªß∂À”Ô—‘ID(1=ºÚÃÂ÷–Œƒ)		
+}
+
+// øÕªß∂Àµ«¬ΩΩ·π˚
+// MsgID£∫OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 2
+message ACK_LoginResult {
+	required int32 result = 1;					//µ«¬ºΩ·π˚ 1£∫≥…π¶ 0: ß∞‹
+	required int32 firstLogin = 2;				// «∑Ò « ◊¥Œµ«¬º 1: « ◊¥Œ 0: ≤ª « ◊¥Œ (∏˘æ›¥À◊÷∂Œ◊ˆ√‚≥Âµ»ªÓ∂Ø)
+}
+
+// µ¿æﬂ–≈œ¢
+// MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 3
+message ACK_ITEMINFO {
+	required int32 id = 1;		//µ¿æﬂŒ®“ª±Í æ£¨±Ì æ «ƒƒ“ªº˛µ¿æﬂ
+	required string itemid = 2;	//µ¿æﬂ£…£ƒ£¨±Ì æ « ≤√¥µ¿æﬂ
+	required int32 num = 3;		//µ¿æﬂµ˛º” ˝
+	required int64 createtime = 4;	//µ¿æﬂ¥¥Ω®(π∫¬Ú) ±º‰
+	required int64 validtime = 5;	// £”‡”––ß ±º‰£¨µ•Œª∫ƒ√Î£¨-1 «Œﬁ”––ß∆⁄
+}
+
+// ¿ÒŒÔ–≈œ¢
+// MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 4
+message ACK_GIFTINFO {
+	required int32 id = 1;
+	required string giftid = 2;
+	required int64 createtime = 3;
+	required int64 validtime = 4;
+	required bytes fromto = 5; // À≠ÀÕµƒ
+}
+
+// «Î«Û±≥∞¸¡–±Ì
+// MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 5
+message REQ_PACK {
+	required int32 type = 1; // 0 «µ¿æﬂ£¨1 «¿ÒŒÔ 2 «√≈∆± 3:NBø®
+}
+
+// ∑µªÿµ¿æﬂ¡–±Ì
+// MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 6
+message ACK_ITEMLIST {
+	repeated ACK_ITEMINFO items = 1;
+}
+
+// ∑µªÿ¿ÒŒÔ¡–±Ì
+// MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 7
+message ACK_GIFTLIST {
+	repeated ACK_GIFTINFO gifts = 1;
+}
+
+//Ω¯»Î◊¿◊”£¨øÕªß∂À≤È—Ø‘⁄◊˘ÕÊº“µƒ¿Ò∆∑◊¥Ã¨ ∫Õ NBø®±Í÷æ
+//MsgID:OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 8
+message REQ_EnterTableQueryPlayerStatus
+{
+	required bytes roleName = 1;  //Ω«…´√˚
+	repeated bytes queryNames = 2; //“™≤È—ØµƒΩ«…´√˚ºØ∫œ
+}
+
+//∑µªÿ◊¿◊”ƒ⁄À˘”–ÕÊº“µƒ¿Ò∆∑¿∏◊¥Ã¨ ∫Õ NBø®±Í÷æ
+//MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 9
+message ACK_EnterTableQueryPlayerStatus
+{
+	required bytes roleName =1;			//∑¢∆≤È—Øµƒ”√ªß
+	
+	message playerStatInfo
+	{
+		required bytes roleName =1;
+		required string gift = 2;
+		optional string nbcard = 3;
+	}
+
+	repeated playerStatInfo playInfoArr = 2;
+}
+
+//ÕÊº“◊¯œ¬£¨¥À ±–Ë“™œÚ◊¿ƒ⁄∆‰À˚ÕÊº“π„≤•¥ÀÕÊº“µƒ¿Ò∆∑◊¥Ã¨
+//MsgID: OGID_MSGBASE_TEXASPOKER_JSSCLIENT + 10
+message REQ_BroadcastPlayerStatus
+{
+	required bytes roleName = 1;	//±ªπ„≤•»À
+	required string matchID = 2;	//±»»¸ID
+	required int32 tableID = 3;	//◊¿◊”ID
+
+}
