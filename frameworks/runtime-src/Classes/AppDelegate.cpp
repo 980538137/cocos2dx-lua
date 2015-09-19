@@ -11,7 +11,8 @@
 #include "runtime/Runtime.h"
 #include "ide-support/RuntimeLuaImpl.h"
 #endif
-//#include "pbc-lua.c"
+
+#include "pbc/pbc-lua.h"
 
 using namespace CocosDenshion;
 
@@ -106,12 +107,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     ScriptEngineManager::getInstance()->setScriptEngine(engine);
     lua_State* L = engine->getLuaStack()->getLuaState();
     lua_module_register(L);
-//    luaopen_protobuf_c(L);
+    luaopen_protobuf_c(L);
     register_all_packages();
     
     LuaStack* stack = engine->getLuaStack();
     stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
-    
     
     
     //register custom function

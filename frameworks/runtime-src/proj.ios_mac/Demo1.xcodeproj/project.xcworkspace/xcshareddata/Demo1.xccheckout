@@ -12,6 +12,8 @@
 	<dict>
 		<key>A9F0E05C59718B663E9434EAEDCEBB03462F638E</key>
 		<string>github.com:980538137/cocos2dx-lua.git</string>
+		<key>F650963659C313C5BE1214E5CA00076E30F11D51</key>
+		<string>https://github.com/cloudwu/pbc</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>frameworks/runtime-src/proj.ios_mac/Demo1.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>A9F0E05C59718B663E9434EAEDCEBB03462F638E</key>
 		<string>../../../../..</string>
+		<key>F650963659C313C5BE1214E5CA00076E30F11D51</key>
+		<string>../../../../../../work/pbc</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:980538137/cocos2dx-lua.git</string>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A9F0E05C59718B663E9434EAEDCEBB03462F638E</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Demo1</string>
+			<string>cocos2dx-lua</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F650963659C313C5BE1214E5CA00076E30F11D51</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pbc</string>
 		</dict>
 	</array>
 </dict>

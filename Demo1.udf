@@ -1,4 +1,4 @@
-<UserData Version="2.3.2.0">
+<UserData Version="2.3.2.3">
   <Properties>
     <Item Key="PackageParamsKey">
       <Value ctype="PackageParams">
@@ -31,7 +31,7 @@
           <FilePathData Path="MainScene.csd" />
           <FilePathData Path="LoginScene.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="MainScene.csd" />
+        <ActiveDocument Path="LoginScene.csd" />
       </Value>
     </Item>
   </Properties>
